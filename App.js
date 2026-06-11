@@ -1,14 +1,17 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, View, StatusBar } from "react-native";
 import CategoriesScreen from "./screens/CategoriesScreen";
 
 export default function App() {
-  return <CategoriesScreen />;
+  return (
+    <View style={styles.container}>
+      <StatusBar style="light" />
+      <CategoriesScreen />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-  appContainer: {
+  container: {
     flex: 1,
-    paddingTop: 50,
-    paddingHorizontal: 16,
   },
 });
