@@ -1,22 +1,8 @@
-import {
-  View,
-  Pressable,
-  Text,
-  Image,
-  StyleSheet,
-  Platform,
-} from "react-native";
+import { View, Pressable, Text, Image, StyleSheet, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import MealDetails from "./MealDetails";
+import MealDetails from "../MealDetails";
 
-function MealItem({
-  id,
-  title,
-  imageUrl,
-  duration,
-  complexity,
-  affordability,
-}) {
+function MealItem({ id, title, imageUrl, duration, complexity, affordability }) {
   const navigation = useNavigation();
 
   function pressHandler() {
@@ -35,11 +21,7 @@ function MealItem({
             <Image source={{ uri: imageUrl }} style={styles.image} />
             <Text style={styles.title}>{title}</Text>
           </View>
-          <MealDetails
-            duration={duration}
-            complexity={complexity}
-            affordability={affordability}
-          />
+          <MealDetails duration={duration} complexity={complexity} affordability={affordability} />
         </View>
       </Pressable>
     </View>
